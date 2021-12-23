@@ -7,8 +7,6 @@ public enum DepositType {
     SETTLEMENT,
     CUMULATIVE,
     SAVINGS,
-    METAL;
-
-
+    METAL
 }
 

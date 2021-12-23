@@ -1,7 +1,11 @@
 package by.epamtc.kulikOlga.taskXML.bean;
 
 
-public class Bank {
+import java.io.Serializable;
+
+public class Bank implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private String country;
@@ -10,7 +14,7 @@ public class Bank {
     private int accountID;
     private double depositAmount;
     private double profitability;
-    private String timeConstraints;
+    private int timeConstraints;
 
     public Bank() {
     }
@@ -71,11 +75,11 @@ public class Bank {
         this.profitability = profitability;
     }
 
-    public String getTimeConstraints() {
+    public int getTimeConstraints() {
         return timeConstraints;
     }
 
-    public void setTimeConstraints(String timeConstraints) {
+    public void setTimeConstraints(int timeConstraints) {
         this.timeConstraints = timeConstraints;
     }
 
@@ -119,13 +123,7 @@ public class Bank {
                 return false;
             }
         }
-        if (null == timeConstraints) {
-            return (timeConstraints == bank.timeConstraints);
-        } else {
-            if (!timeConstraints.equals(bank.timeConstraints)) {
-                return false;
-            }
-        }
+
         if (accountID != bank.accountID) {
             return false;
         }
@@ -133,6 +131,9 @@ public class Bank {
             return false;
         }
         if (profitability != bank.profitability) {
+            return false;
+        }
+        if (timeConstraints != bank.timeConstraints) {
             return false;
         }
         return true;
@@ -143,11 +144,11 @@ public class Bank {
         final int primeNumber = 17;
         int result = 1;
         result = (int) (primeNumber * accountID + primeNumber * depositAmount
-                + primeNumber * profitability + ((null == name) ? 0 : name.hashCode()));
+                + primeNumber * profitability + primeNumber * timeConstraints
+                + ((null == name) ? 0 : name.hashCode()));
         result = primeNumber * result + ((null == country) ? 0 : country.hashCode());
         result = primeNumber * result + ((null == type) ? 0 : type.hashCode());
         result = primeNumber * result + ((null == depositor) ? 0 : depositor.hashCode());
-        result = primeNumber * result + ((null == timeConstraints) ? 0 : timeConstraints.hashCode());
         return result;
     }
 
@@ -202,7 +203,7 @@ public class Bank {
             newBank.profitability = profitability;
             return this;
         }
-        public Builder withTimeConstraints(String timeConstraints){
+        public Builder withTimeConstraints(int timeConstraints){
             newBank.timeConstraints = timeConstraints;
             return this;
         }
