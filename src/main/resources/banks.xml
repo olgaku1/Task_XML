@@ -1,0 +1,108 @@
+<?xml version = "1.0"?>
+
+<banks xmlns="http://www.example.by"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.example.by banks.xsd">
+
+
+    <bank name="Приорбанк" country="Беларусь">
+        <type>До востребования</type>
+        <depositor>Десятник Анастасия Анатольевна</depositor>
+        <account-id>1</account-id>
+        <amount-on-deposit>100</amount-on-deposit>
+        <profitability>2.5</profitability>
+        <time-constraints>24</time-constraints>
+    </bank>
+
+    <bank name="Беларусбанк" country="Беларусь">
+        <type>Накопительный</type>
+        <depositor>Позняк Ирина Леонидовна</depositor>
+        <account-id>2</account-id>
+        <amount-on-deposit>840</amount-on-deposit>
+        <profitability>1.7</profitability>
+        <time-constraints>36</time-constraints>
+    </bank>
+
+    <bank name="Приорбанк" country="Беларусь">
+        <type>Сберегательный</type>
+        <depositor>Топчиева Валентина Петровна</depositor>
+        <account-id>3</account-id>
+        <amount-on-deposit>1230</amount-on-deposit>
+        <profitability>1.5</profitability>
+        <time-constraints>60</time-constraints>
+    </bank>
+
+    <bank name="Белагропромбанк" country="Беларусь">
+        <type>Сберегательный</type>
+        <depositor>Жуковская Елена Борисовна</depositor>
+        <account-id>4</account-id>
+        <amount-on-deposit>845</amount-on-deposit>
+        <profitability>5.0</profitability>
+        <time-constraints>42</time-constraints>
+    </bank>
+
+    <bank name="Беларусбанк" country="Беларусь">
+        <type>Накопительный</type>
+        <depositor>Костень Сергей Викторович</depositor>
+        <account-id>5</account-id>
+        <amount-on-deposit>60</amount-on-deposit>
+        <profitability>1.7</profitability>
+        <time-constraints>24</time-constraints>
+    </bank>
+
+    <bank name="Беларусбанк" country="Беларусь">
+        <type>Накопительный</type>
+        <depositor>Десятник Дмитрий Викторович</depositor>
+        <account-id>6</account-id>
+        <amount-on-deposit>2650</amount-on-deposit>
+        <profitability>1.7</profitability>
+        <time-constraints>60</time-constraints>
+    </bank>
+
+    <bank name="МТБанк" country="Беларусь">
+        <type>Сберегательный</type>
+        <depositor>Десятник Анастасия Анатольевна</depositor>
+        <account-id>7</account-id>
+        <amount-on-deposit>450</amount-on-deposit>
+        <profitability>2.3</profitability>
+        <time-constraints>36</time-constraints>
+    </bank>
+
+    <bank name="МТБанк" country="Беларусь">
+        <type>До востребования</type>
+        <depositor>Позняк Анатолий Павлович</depositor>
+        <account-id>8</account-id>
+        <amount-on-deposit>1500</amount-on-deposit>
+        <profitability>3.7</profitability>
+        <time-constraints>48</time-constraints>
+    </bank>
+
+    <bank name="БПС-Сбербанк" country="Беларусь">
+        <type>Срочный</type>
+        <depositor>Юрчук Дмитрий Александрович</depositor>
+        <account-id>9</account-id>
+        <amount-on-deposit>520</amount-on-deposit>
+        <profitability>0.8</profitability>
+        <time-constraints>6</time-constraints>
+    </bank>
+
+    <bank name="Технобанк" country="Беларусь">
+        <type>Срочный</type>
+        <depositor>Новик Андрей Васильевич</depositor>
+        <account-id>10</account-id>
+        <amount-on-deposit>4500</amount-on-deposit>
+        <profitability>1.17</profitability>
+        <time-constraints>9</time-constraints>
+    </bank>
+
+    <bank name="АльфаБанк" country="Беларусь">
+        <type>Накопительный</type>
+        <depositor>Грицавец Антон Андреевич</depositor>
+        <account-id>11</account-id>
+        <amount-on-deposit>180</amount-on-deposit>
+        <profitability>2.7</profitability>
+        <time-constraints>36</time-constraints>
+    </bank>
+
+</banks>
+

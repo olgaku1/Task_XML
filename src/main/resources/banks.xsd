@@ -1,0 +1,94 @@
+<?xml version = "1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.by"
+           xmlns="http://www.example.by" elementFormDefault="qualified">
+
+
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[А-Яа-я][A-Za-z]{4,40}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="country">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[А-Я][а-я]{2,20}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="type">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="До востребования"/>
+                <xs:enumeration value="Срочный"/>
+                <xs:enumeration value="Расчетный"/>
+                <xs:enumeration value="Накопительный"/>
+                <xs:enumeration value="Сберегательный"/>
+                <xs:enumeration value="Металлический"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="depositor">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[А-Яа-я \s*]{6,60}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="account-id">
+        <xs:simpleType>
+            <xs:restriction base="xs:nonNegativeInteger"/>
+        </xs:simpleType>
+
+    </xs:element>
+
+    <xs:element name="amount-on-deposit" default="0" type="xs:double"/>
+
+    <xs:element name="profitability">
+        <xs:simpleType>
+            <xs:restriction base="xs:double">
+                <xs:minExclusive value="0"/>
+                <xs:maxExclusive value="100"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="time-constraints">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="bank">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="type"/>
+                <xs:element ref="depositor"/>
+                <xs:element ref="account-id"/>
+                <xs:element ref="amount-on-deposit"/>
+                <xs:element ref="profitability"/>
+                <xs:element ref="time-constraints"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+            <xs:attribute name="country" type="xs:string" use="required"/>
+
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="banks">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element
+                        ref="bank"
+                        minOccurs="10"
+                        maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
